@@ -1,3 +1,5 @@
+import java.lang.reflect.Method;
+
 /**
  * Example.java
  */
@@ -6,32 +8,39 @@ public class Example {
         String classTitle = "Example";
         Example obj = new Example();
         System.out.println("[class] " + classTitle);
-        obj.printLine();
-        obj.example01();
-        obj.printLine();
-        obj.example02();
-        obj.printLine();
-        obj.example03();
-        obj.printLine();
-        obj.example04();
-        obj.printLine();
-        obj.example05();
-        obj.printLine();
-        obj.example06();
-        obj.printLine();
-        obj.example07();
-        obj.printLine();
+        obj.exControl(obj); // 예제 실행
     }
-    public void objControl(int data) {
-        int objLang = data;
-        Example obj = new Example();
-        for(int i = 0; i < objLang; i++) {
-            if(i < 10) {
 
+    public void exControl(Example obj) {
+        Method[] getObj = Example.class.getMethods();
+        int cnt = 0;
+        for (int i = 0; i < getObj.length; i++) {
+            if (getObj[i].getName().startsWith("example")) {
+                // System.out.println(getObj[i].getName());
+                cnt++;
             }
         }
+        for(int i = 1; i < cnt; i++) {
+            obj.printLine();
+            try {
+                if(i < 10) {
+                    /**
+                     * Example.class.getMethod("example0" + i)
+                     * - Example 클래스에서 이름이 "example0" + i (예: example01)인 public 메서드를 찾음
+                     * .invoke(obj)
+                     * - 위에서 찾은 메서드를 obj 인스턴스에서 실행(호출)함
+                     */
+                    Example.class.getMethod("example0" + i).invoke(obj);
+                } else {
+                    Example.class.getMethod("example" + i).invoke(obj);
+                }
+            } catch (Exception e) {
+                System.out.println("메서드 호출 오류");
+            }
+        }
+        obj.printLine();
     }
-    // printLine : 라인 출력 메서드
+
     public void printLine() {
         System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
     }
@@ -119,19 +128,34 @@ public class Example {
         System.out.println("a * b : " + (a * b));
         System.out.println("a / b : " + (a / b));
         System.out.println("a % b : " + (a % b));
+        System.out.println("a % b : " + (a % b));
+        System.out.println("a += 1; -> 결과 :" + (a += 1) + "// a=a+1");
         System.out.println("++a : " + (++a));
         System.out.println("--b : " + (--b));
-        System.out.println("-> 사칙연산은 기본적으로 +, -, *, /, % 사용");
+        System.out.println("-> 사칙연산은 기본적으로 +, -, *, /, %, += ... 사용");
         System.out.println("-> 증감연산은 ++ or -- 이며, ++a (먼저증가) a++ (후에증가)");
     }
 
     // example07 : 논리연산
     public void example07() {
-        System.out.println("* [example07] 논리연산 (교육중)");
-        boolean a = 10 > 5; // true
-        boolean b = 10 < 5; // false
-        System.out.println("boolean a = 10 > 5; // " + a);
-        System.out.println("boolean b = 10 < 5; // " + b);
+        System.out.println("* [example07] 논리연산");
+        boolean a = (10 > 5); // true
+        boolean b = (10 < 5); // false
+        boolean c = (10 == 5); // false
+        boolean d = (10 != 5); // true
+        boolean e = (a && b); // false
+        boolean f = (a || b); // true
+        boolean g = !b; // true
+        String h = (10 > 5) ? "참" : "거짓"; // 삼항연산자 사용 예시
+        System.out.println("boolean a = (10 > 5); // " + a);
+        System.out.println("boolean b = (10 < 5); // " + b);
+        System.out.println("boolean c = (10 == 5); // " + c);
+        System.out.println("boolean d = (10 != 5); // " + d);
+        System.out.println("boolean e = (a && b); // " + e);
+        System.out.println("boolean f = (a || b); // " + f);
+        System.out.println("boolean g = !b; // " + g);
+        System.out.println("String h = (10 > 5) ? \"참\" : \"거짓\"; // " + h);
         System.out.println("-> 논리연산 <=, >=, ==, !=, &&, ||, ! 사용");
+        System.out.println("-> && (AND), || (OR), ! (NOT)");
     }
 }
