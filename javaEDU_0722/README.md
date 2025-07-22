@@ -82,3 +82,6 @@ String name = "홍길동"; // 문자열(참조형)
     - 결과물을 받아 콘솔에 출력하여 확인 해주는 메서드
     - ```System.out.print()``` : 출력간 줄바꿈x
     - ```System.out.println()``` : 출력간 줄바꿈o
+
+#### 2.4 논리연산자
+1) ```src > Example.java``` 참고
