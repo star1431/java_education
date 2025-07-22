@@ -6,7 +6,7 @@ public class HelloWorld {
         // 변수(필드) 선언
         String strVal = "Hello";
         int numVal = 5;
-        // 메서드 호출 (System.out.println)
+        // 메서드 호출 (System.out.println);ssss
         System.out.println("소녀시대");
         System.out.println(strVal);
         System.out.println(numVal);
