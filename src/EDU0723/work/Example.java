@@ -19,18 +19,19 @@ public class Example {
         System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
         obj.example04();
     }
+    
     // example01 : 문제1
     public void example01() {
         System.out.println("문제1 : 1~50까지 총합 출력하기");
 
-        // 루프 변수 사용 (권장 X)
+        // 루프 값 사용 (권장 X)
         // int total = 0;
         // for(int i = 1; i <= 50; i++) {
         //     total = total + i;
         // }
         // System.out.println("1부터 50까지의 합: " + total);
 
-        // 루프 변수 미사용 (권장 O)
+        // 루프 값 미사용 (권장 O)
         int total = 0;
         int num = 0;
         for(int i = 0; i < 50; i++) {
@@ -44,7 +45,7 @@ public class Example {
     public void example02() {
         System.out.println("문제2 : 1~100까지 짝수 총합을 출력하기");
 
-        // 루프 변수 사용 (권장 X)
+        // 루프 값 사용 (권장 X)
         // int total = 0;
         // for(int i = 1; i <= 100; i++) {
         //     if(i % 2 == 0) {
@@ -53,7 +54,7 @@ public class Example {
         // }
         // System.out.println("1부터 100까지의 짝수 합: " + total);
 
-        // 루프 변수 미사용 (권장 O)
+        // 루프 값 미사용 (권장 O)
         int total = 0;
         int num = 0;
         for (int i = 0; i < 100; i++) {
