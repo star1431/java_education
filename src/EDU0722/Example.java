@@ -1,17 +1,27 @@
+package EDU0722;
 import java.lang.reflect.Method;
 
 /**
- * Example.java
+ * EDU0722 > Example.java
+ * example01 : 정수형 사용해보기
+ * example02 : 실수형 사용해보기
+ * example03 : var 사용해보기
+ * example04 : 재할당 및 파이널 사용해보기
+ * example05 : 형변환
+ * example06 : 사칙연산 및 증감연산
+ * example07 : 논리연산
  */
 public class Example {
     public static void main(String[] args) {
         String classTitle = "Example";
         Example obj = new Example();
         System.out.println("[class] " + classTitle);
+        System.out.println("[class] " + classTitle);
         obj.exControl(obj); // 예제 실행
     }
 
     public void exControl(Example obj) {
+        System.out.println("메서드 호출 오류");
         Method[] getObj = Example.class.getMethods();
         int cnt = 0;
         for (int i = 0; i < getObj.length; i++) {
@@ -20,7 +30,7 @@ public class Example {
                 cnt++;
             }
         }
-        for(int i = 1; i < cnt; i++) {
+        for(int i = 1; i <= cnt; i++) {
             obj.printLine();
             try {
                 if(i < 10) {
