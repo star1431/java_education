@@ -2,8 +2,9 @@ package EDU0723;
 import java.lang.reflect.Method;
 /**
  * EDU0723 > Example.java
- * example01 : 조건문 사용해보기
- * example02 : 스위치 사용해보기
+ * example01 : 조건문(if) 사용해보기
+ * example02 : 조건문(switch) 사용해보기
+ * example03 : 반복문(while) 사용해보기
  */
 public class Example {
     public static void main(String[] args) {
@@ -37,9 +38,9 @@ public class Example {
         System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
     }
     
-    // example01 : 조건문 사용해보기
+    // example01 : 조건문(if) 사용해보기
     public void example01() {
-        System.out.println("* [example01] 조건문 사용해보기");
+        System.out.println("* [example01] 조건문(if) 사용해보기");
         int age = 121;
         String innerText;
 
@@ -75,9 +76,9 @@ public class Example {
         }
     }
 
-    // example02 : 스위치 사용해보기
+    // example02 : 조건문(switch) 사용해보기
     public void example02() {
-        System.out.println("* [example02] 스위치 사용해보기");
+        System.out.println("* [example02] 조건문(switch) 사용해보기");
         int lastYear = 7;
         String familyName ="홍";
         /**
@@ -102,6 +103,41 @@ public class Example {
             default:
                 System.out.println("신청자 성은 " + familyName + "씨이며, 대상자가 아닙니다.");
                 break;
+        }
+    }
+    
+    // example03 : 반복문(while) 사용해보기
+    public void example03() {
+        System.out.println("* [example03] 반복문(while) 사용해보기");
+        int cnt = 10;
+        int step = 1;
+
+        while(cnt <= 100) {
+            System.out.println("현재 카운트: " + cnt + ", 현재 실행횟수: " + step);
+            step++;
+            cnt += 10;
+        }
+        /**
+         * for에서 쓸수 없는 while문 예제 (loop 랜덤)
+         */
+        System.out.println("* [example03] 반복문(while) 루프 랜덤");
+        int randomCnt = 0;
+        int step2 = 1;
+        while(randomCnt < 90) {
+            randomCnt = (int)(Math.random() * 100) + 1; // 1부터 100까지의 정수 랜덤값 생성
+            System.out.println("90이상일 때 정지, 생성된 랜덤 정수: " + randomCnt + ", 지금까지 실행횟수: " + step2);
+            step2++;
+        }
+
+    }
+    
+    // example04 : 반복문(for) 사용해보기
+    public void example04() {
+        System.out.println("* [example04] 반복문(for) 사용해보기");
+        int step = 1;
+        for (int i = 0; i < 10; i++) {
+            System.out.println("현재 카운트: " + i + ", 현재 실행횟수: " + step);
+            step++;
         }
     }
 }
