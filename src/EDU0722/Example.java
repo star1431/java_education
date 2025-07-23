@@ -1,6 +1,5 @@
 package EDU0722;
 import java.lang.reflect.Method;
-
 /**
  * EDU0722 > Example.java
  * example01 : 정수형 사용해보기
@@ -13,10 +12,8 @@ import java.lang.reflect.Method;
  */
 public class Example {
     public static void main(String[] args) {
-        String classTitle = "Example";
+        System.out.println("[EDU0722] Example");
         Example obj = new Example();
-        System.out.println("[class] " + classTitle);
-        System.out.println("[class] " + classTitle);
         obj.exControl(obj); // 예제 실행
     }
 
@@ -25,10 +22,7 @@ public class Example {
         Method[] getObj = Example.class.getMethods();
         int cnt = 0;
         for (int i = 0; i < getObj.length; i++) {
-            if (getObj[i].getName().startsWith("example")) {
-                // System.out.println(getObj[i].getName());
-                cnt++;
-            }
+            if (getObj[i].getName().startsWith("example")) cnt++;
         }
         for(int i = 1; i <= cnt; i++) {
             obj.printLine();
