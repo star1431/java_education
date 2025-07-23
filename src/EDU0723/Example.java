@@ -128,7 +128,6 @@ public class Example {
             System.out.println("90이상일 때 정지, 생성된 랜덤 정수: " + randomCnt + ", 지금까지 실행횟수: " + step2);
             step2++;
         }
-
     }
     
     // example04 : 반복문(for) 사용해보기
