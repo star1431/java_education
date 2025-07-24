@@ -116,20 +116,21 @@ public class Answer {
          * 조건2    : 층수마다 별 1,3,5.. 홀수 증가
          * 조건3    : 층수마다 앞에 공백 4,3,2,1,0.. 감소
          * 설계     : line반복, 별반복, 공백반복 for문 3개 설계 필요
-         *           - 라인최대값,증가값 변수 설정하여 별홀수증가 및 공백갯수 감소시키기
+         *           - 라인최대값 및 증가값 변수 설정하여 별갯수 홀수증가 및 공백갯수 감소시키기
          *
-         * [추가설계] 역 피라미드 가능 만들기
-         *  - 역 피라미드가 가능할라면 반대 방식 실행이 필요
-         *  - 정피라미드 이후 다시 for문으로 역피라미드 설계
-         *  - 감가카운팅은 정피라미드 다음 실행해서 해야되므로 최대치보다 1낮은상태에서 반대 적용
+         * [추가설계] 역 피라미드 만들어보기
+         *  - 역피라미드 만드는게 가능할려면 기존 최대값에서 감소하는 식으로 실행이 필요
+         *  - 정피라미드가 끝나고 이어붙이기 위해 같은레벨의 for문으로 작업
+         *  - 역피라미드 카운트
+         *      - 정피라미드 끝나고 실행이니 (최대치-1)에서 감소 형식으로 설정
          */
 
         // 피라미드 쌓기
-        final int MAX_COUNT = 5;    // 라인 최대치 설정
-        int cnt = 1;                // 증가값
-        for(int i = 0; i < MAX_COUNT; i++) {
+        int maxCnt = 5;    // 라인 최대치 설정
+        int cnt = 1;       // 증가값
+        for(int i = 0; i < maxCnt; i++) {
             // 공백 갯수 삽입
-            for(int j = 0; j < (MAX_COUNT - cnt); j++) {
+            for(int j = 0; j < (maxCnt - cnt); j++) {
                 System.out.print(" ");
             }
             // 별 갯수 삽입
@@ -141,19 +142,18 @@ public class Answer {
         }
         
         // 역 피라미드 추가해보기
-        final int MAX_COUNT2 = MAX_COUNT - 1;   // 역 피라미드 최대치 설정
-        int cnt2 = MAX_COUNT2;                  // 역 피라미드 감소값
-        for(int i = 0; i < MAX_COUNT; i++) {
+        int downCnt = maxCnt - 1;  // 감소값
+        for(int i = 0; i < maxCnt; i++) {
             // 공백 갯수 삽입
-            for(int j = 0; j < (MAX_COUNT - cnt2); j++) {
+            for(int j = 0; j < (maxCnt - downCnt); j++) {
                 System.out.print(" ");
             }
             // 별 갯수 삽입
-            for(int j = 0; j < (cnt2*2 - 1); j++) {
+            for(int j = 0; j < (downCnt*2 - 1); j++) {
                 System.out.print("*");
             }
             System.out.println();
-            cnt2--;
+            downCnt--;
         }
     }
     
