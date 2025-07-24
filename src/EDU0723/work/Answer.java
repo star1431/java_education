@@ -155,13 +155,12 @@ public class Answer {
             }
             System.out.println();
             downCnt--;
-<<<<<<< HEAD
         }
     }
     
     // example03A : 문제3B
     public void example03B() {
-        System.out.println("문제3B : 다이아몬드 공백");
+        System.out.println("문제3B : 다이아몬드 공백 test 중");
 
         int maxCnt = 10;    // 라인 최대치 설정
         int cnt = 1;       // 증가값
@@ -180,8 +179,6 @@ public class Answer {
             }
             System.out.println();
             cnt++;
-=======
->>>>>>> 6e13371571519290e5c8e110498e197e391922fc
         }
     }
     
