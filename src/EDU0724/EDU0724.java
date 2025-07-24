@@ -87,5 +87,23 @@ public class EDU0724 {
         System.out.println("총점: " + total);
         System.out.println("평균: " + average);
     }
+    
+    // example03 : 
+    public void example03() {
+        System.out.println("* [example03] 참조된 메모리 디버깅 확인");
+        
+        int[] arr = new int[] {10, 20, 30, 40, 50};        
+        // arr  = {10, 20, 30, 40, 50}
 
+        arr[0]  = 11;
+        // arr  = {11, 20, 30, 40, 50}
+
+        int[] arr2 = arr; 
+        // arr  = {11, 20, 30, 40, 50}
+        // arr2 = {11, 20, 30, 40, 50} (같은 메모리 참조됨)
+
+        arr2[0] = 12;
+        // arr  = {12, 20, 30, 40, 50} (arr2를 변경했지만 같은 참조를 바라보고있어서 arr도 변경됨)
+        // arr2 = {12, 20, 30, 40, 50}
+    }
 }

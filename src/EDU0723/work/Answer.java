@@ -170,7 +170,7 @@ public class Answer {
                 System.out.print("*");
             }
             // 공백 갯수 삽입
-            for(int j = 1; j < (cnt*2 - 1); j++) {
+            for(int j = 0; j < (cnt*2 - 1); j++) {
                 System.out.print(" ");
             }
             // 별 갯수 삽입
@@ -179,6 +179,23 @@ public class Answer {
             }
             System.out.println();
             cnt++;
+        }
+        int downCnt = maxCnt - 1;      // 감소값
+        for(int i = 0; i < (maxCnt - 1); i++) {
+            // 별 갯수 삽입
+            for(int j = 0; j < (maxCnt - downCnt); j++) {
+                System.out.print("*");
+            }
+            // 공백 갯수 삽입
+            for(int j = 0; j < (downCnt*2 - 1); j++) {
+                System.out.print(" ");
+            }
+            // 별 갯수 삽입
+            for(int j = 0; j < (maxCnt - downCnt); j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+            downCnt--;
         }
     }
     
