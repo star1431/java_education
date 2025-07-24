@@ -29,7 +29,7 @@ public class Example {
         // for(int i = 1; i <= 50; i++) {
         //     total = total + i;
         // }
-        // System.out.println("1부터 50까지의 합: " + total);
+        // System.out.println("1부터 50까지 총합: " + total);
 
         // 루프 값 미사용 (권장 O)
         int total = 0;
@@ -52,7 +52,7 @@ public class Example {
         //         total = total + i;
         //     }
         // }
-        // System.out.println("1부터 100까지의 짝수 합: " + total);
+        // System.out.println("1~100까지 짝수 총합: " + total);
 
         // 루프 값 미사용 (권장 O)
         int total = 0;
@@ -69,10 +69,20 @@ public class Example {
     // example03 : 문제3
     public void example03() {
         System.out.println("문제3 : 별표 탑 쌓기 (10층)");
+        // 문자열 재할당
         String star = "*";
         for(int i = 0; i < 10; i++) {
             System.out.println(star);
             star = star + "*";
+        }
+        // 내부 반복문
+        int cnt = 0;
+        for(int i = 0; i < 10; i++) {
+            cnt++;
+            for(int j = 0; j < cnt; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
     
