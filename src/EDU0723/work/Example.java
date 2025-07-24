@@ -75,7 +75,7 @@ public class Example {
             System.out.println(star);
             star = star + "*";
         }
-        // 내부 반복문
+        // 내부 반복문 사용
         int cnt = 0;
         for(int i = 0; i < 10; i++) {
             cnt++;
