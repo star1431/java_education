@@ -69,7 +69,7 @@ public class Example {
     // example03 : 문제3
     public void example03() {
         System.out.println("문제3 : 별표 탑 쌓기 (10층)");
-        // 문자열 재할당
+        // 문자열 추가
         String star = "*";
         for(int i = 0; i < 10; i++) {
             System.out.println(star);

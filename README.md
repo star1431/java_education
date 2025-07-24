@@ -13,4 +13,7 @@
 - 2025.07.23
     * 조건문 (if, switch) 예제    
     * 반복문 (while, for) 예제
-    * 문제풀이    
+    * 문제풀이  
+- 2025.07.23
+    * 펀션 function(method)
+    * 디버거 (debugger)

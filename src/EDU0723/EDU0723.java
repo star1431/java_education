@@ -1,20 +1,20 @@
 package EDU0723;
 import java.lang.reflect.Method;
 /**
- * EDU0723 > Example.java
+ * EDU0723 > EDU0723.java
  * example01 : 조건문(if) 사용해보기
  * example02 : 조건문(switch) 사용해보기
  * example03 : 반복문(while) 사용해보기
  */
-public class Example {
+public class EDU0723 {
     public static void main(String[] args) {
         System.out.println("[EDU0723] Example");
-        Example obj = new Example();
+        EDU0723 obj = new EDU0723();
         obj.exControl(obj); // 예제 실행
     }
 
-    public void exControl(Example obj) {
-        Method[] getObj = Example.class.getMethods();
+    public void exControl(EDU0723 obj) {
+        Method[] getObj = EDU0723.class.getMethods();
         int cnt = 0;
         for (int i = 0; i < getObj.length; i++) {
             if (getObj[i].getName().startsWith("example")) cnt++;
@@ -23,9 +23,9 @@ public class Example {
             obj.printLine();
             try {
                 if(i < 10) {
-                    Example.class.getMethod("example0" + i).invoke(obj);
+                    EDU0723.class.getMethod("example0" + i).invoke(obj);
                 } else {
-                    Example.class.getMethod("example" + i).invoke(obj);
+                    EDU0723.class.getMethod("example" + i).invoke(obj);
                 }
             } catch (Exception e) {
                 System.out.println("메서드 호출 오류");

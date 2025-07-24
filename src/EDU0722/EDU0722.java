@@ -1,7 +1,7 @@
 package EDU0722;
 import java.lang.reflect.Method;
 /**
- * EDU0722 > Example.java
+ * EDU0722 > EDU0722.java
  * example01 : 정수형 사용해보기
  * example02 : 실수형 사용해보기
  * example03 : var 사용해보기
@@ -10,16 +10,16 @@ import java.lang.reflect.Method;
  * example06 : 사칙연산 및 증감연산
  * example07 : 논리연산
  */
-public class Example {
+public class EDU0722 {
     public static void main(String[] args) {
         System.out.println("[EDU0722] Example");
-        Example obj = new Example();
+        EDU0722 obj = new EDU0722();
         obj.exControl(obj); // 예제 실행
     }
 
-    public void exControl(Example obj) {
+    public void exControl(EDU0722 obj) {
         System.out.println("메서드 호출 오류");
-        Method[] getObj = Example.class.getMethods();
+        Method[] getObj = EDU0722.class.getMethods();
         int cnt = 0;
         for (int i = 0; i < getObj.length; i++) {
             if (getObj[i].getName().startsWith("example")) cnt++;
@@ -34,9 +34,9 @@ public class Example {
                      * .invoke(obj)
                      * - 위에서 찾은 메서드를 obj 인스턴스에서 실행(호출)함
                      */
-                    Example.class.getMethod("example0" + i).invoke(obj);
+                    EDU0722.class.getMethod("example0" + i).invoke(obj);
                 } else {
-                    Example.class.getMethod("example" + i).invoke(obj);
+                    EDU0722.class.getMethod("example" + i).invoke(obj);
                 }
             } catch (Exception e) {
                 System.out.println("메서드 호출 오류");
