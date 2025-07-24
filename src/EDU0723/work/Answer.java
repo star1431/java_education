@@ -155,6 +155,7 @@ public class Answer {
             }
             System.out.println();
             downCnt--;
+<<<<<<< HEAD
         }
     }
     
@@ -179,6 +180,8 @@ public class Answer {
             }
             System.out.println();
             cnt++;
+=======
+>>>>>>> 6e13371571519290e5c8e110498e197e391922fc
         }
     }
     
