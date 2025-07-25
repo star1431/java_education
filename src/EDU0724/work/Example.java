@@ -53,6 +53,9 @@ public class Example {
             if(dataArr[cnt] > maxNum) {
                 maxNum = dataArr[cnt];
             }
+            if(dataArr[cnt] < minNum) {
+                minNum = dataArr[cnt];
+            }
             
             cnt++;
         }
