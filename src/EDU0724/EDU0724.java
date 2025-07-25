@@ -3,6 +3,8 @@ import java.lang.reflect.Method;
 /**
  * EDU0724 > EDU0724.java
  * example01 : 배열 (Array)
+ * example02 : 총점, 평균 구하기 (Array)
+ * example03 : 참조된 메모리 디버깅 확인
  */
 public class EDU0724 {
     public static void main(String[] args) {
@@ -88,7 +90,7 @@ public class EDU0724 {
         System.out.println("평균: " + average);
     }
     
-    // example03 : 
+    // example03 : 참조된 메모리 디버깅 확인
     public void example03() {
         System.out.println("* [example03] 참조된 메모리 디버깅 확인");
         
