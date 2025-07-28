@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
  */
 public class EDU0725 {
     public static void main(String[] args) {
-        System.out.println("[EDU0724] Example");
+        System.out.println("[EDU0725] Example");
         EDU0725 obj = new EDU0725();
         obj.exControl(obj); // 예제 실행
     }

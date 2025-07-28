@@ -1,4 +1,3 @@
-
 package EDU0725.work;
 import java.util.Arrays;
 import java.util.Random;
