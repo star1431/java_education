@@ -134,7 +134,7 @@ public class Student {
         if (scores.length == 0) {
             return 0.0;
         }
-        System.out.println(scores.length);
+        // System.out.println(scores.length);
         double avg2 = getTotal() / (double) scores.length;
         this.avg = Math.floor(avg2 * 10) / 10.0;
         /**

@@ -9,7 +9,7 @@ public class StudentSystem {
         Scanner scan = new Scanner(System.in);
         ArrayList<Student> studentList = new ArrayList<>();
 
-        System.out.println("[StudentSystem] 학생 관리 시스템");
+        System.out.println("[StudentSystem] 학생 추가 시스템");
         // inputField에서 학생 정보 입력받아서 반환
         Student stu = inputField(scan);
         studentList.add(stu);
