@@ -37,6 +37,7 @@ public class LottoTicket {
             System.out.println( (i + 1) + "게임 = " + Arrays.toString(result[i]));
         }
 
+        
     }
     
     /**

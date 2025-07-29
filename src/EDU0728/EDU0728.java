@@ -66,7 +66,6 @@ public class EDU0728 {
         int[] arrT0 = new int[] { 1, 2, 3, 4, 5, 6 };
         int[][] arrT1 = new int[][] { arrT0, arrT0, new int[] {0,0} };
         
-
         System.out.println("");
 
     }

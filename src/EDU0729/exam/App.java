@@ -22,8 +22,22 @@ public class App {
         // 학생 정보 출력
         st1.printAll();
 
+        System.out.println("ㅡㅡㅡ");
         // private 변수 접근 예시
         st1.setKor2(80);
         System.out.println("점수2: " + st1.getKor2());
+
+
+
+
+        System.out.println("ㅡㅡㅡ");
+        Student01 st01 = new Student01();
+        st01.setKor(-999);
+        st01.setEng(88);
+        st01.setMath(92);
+        System.out.println("국어 점수: " + st01.getKor());
+        System.out.println("영어 점수: " + st01.getEng());
+        System.out.println("수학 점수: " + st01.getMath());
+        System.out.println("총점: " + st01.getTotal()); 
     }
 }

@@ -1,5 +1,6 @@
 package EDU0729;
 import java.lang.reflect.Method;
+import EDU0729.exam.*;
 /**
  * EDU0729 > EDU0729.java
  * example01 : 2차원배열
@@ -36,66 +37,11 @@ public class EDU0729 {
         System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
     }
 
-    // example01 : 배열 차원
+    // example01 : Student.java
     public void example01() {
-        System.out.println("* [example01] 배열 차원 예시1");
+        System.out.println("* [example01] Student.java");
 
-        int[] arr = new int[6]; // 4byte <= 6 * 4byte
-        int[][] arr2 = new int[3][6];  // 4byte <= 3 * (6 * 4byte)
-        int[][][] arr3 = new int[3][6][2];  // 4byte <= 3 * (6 * (2 * 4byte))
-        int[][][][] arr4 = new int[3][6][2][7];  // 4byte <= 3 * (6 * (2 * (7 * 4byte)))
-        /**
-         * // 1차원
-         * [] = {n, n, n, n, n};
-         * 
-         * // 2차원
-         * [][] = {
-         *      {n, n}, 
-         *      {n, n}, 
-         *      {n, n} 
-         * };
-         * 
-         * // 3차원
-         * [][][] = {
-         *      { {n, n}, {n, n}, {n, n}, {n, n}, {n, n}, {n, n} },
-         *      { {n, n}, {n, n}, {n, n}, {n, n}, {n, n}, {n, n} },
-         *      { {n, n}, {n, n}, {n, n}, {n, n}, {n, n}, {n, n} }
-         * };
-         */
-
-        int[] arrT0 = new int[] { 1, 2, 3, 4, 5, 6 };
-        int[][] arrT1 = new int[][] { arrT0, arrT0, new int[] {0,0} };
-        
-
-        System.out.println("");
-
+        Student st1 = new Student(); // 클래스 인스턴스 생성
+        // st1.name = "홍길동";
     }
-    // example01 : 배열 차원
-    public void example02() {
-        System.out.println("* [example02] 배열 차원 예시2");
-
-        int[] arr1 = new int[] { // = [5];
-            1, 2, 3, 4, 5
-        };
-        int[][] arr2 = new int[][] { // = [3][5];
-            { 1, 0, 0, 0, 5 },
-            { 0, 2, 0, 4, 0 },
-            { 0, 0, 3, 0, 0 }
-        };
-        int[][][] arr3 = new int[][][] { // = [2][3][5];
-            {
-                { 1, 0, 0, 0, 5 },
-                { 0, 2, 0, 4, 0 },
-                { 0, 0, 3, 0, 0 }
-            },
-            {
-                { 1, 0, 0, 0, 5 },
-                { 0, 2, 0, 4, 0 },
-                { 0, 0, 3, 0, 0 }
-            }
-        };
-
-
-    }
-
 }

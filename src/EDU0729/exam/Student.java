@@ -38,7 +38,7 @@ public class Student {
     }
     
     public int age;             // 나이         (public 변수로 외부 접근 허용)
-    private int kor2;           // 점수2    (private 변수로 외부 접근 제한)
+    private int kor2;           // 점수2        (private 변수로 외부 접근 제한)
 
     /**
      * getKor2 : getter 메서드
@@ -52,9 +52,9 @@ public class Student {
      * @param kor2
      */
     public void setKor2(int kor2) {
-        /**
-         * this : 현재객체 참조 (Student 클래스의 인스턴스)
-         */
-        this.kor2 = kor2;   // 학교 정보 설정
+        if(kor2 < 0 || kor2 > 100) {
+            return;
+        }
+        this.kor2 = kor2;
     }
 }
