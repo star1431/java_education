@@ -18,10 +18,10 @@ public class LottoTicketTest {
         int games = 0;
         boolean buyValid = true;
         while (buyValid) {
-            System.out.print("구매할 횟수 입력해주세요. (1 ~ 5) \n입력 : ");
+            System.out.print("[안내] 구매할 횟수 입력해주세요. (1 ~ 5) \n입력 : ");
             games = (int) inputValue("int");
             if(games < 1 || games > 5) {
-                System.out.println("ERROR! (입력값 : " + games + ")\n안내 : 1 ~ 5 사이의 숫자를 입력해주세요.");
+                System.out.println("[ERROR!] (입력값 : " + games + ")\n[안내] 1 ~ 5 사이의 숫자를 입력해주세요.");
             } else {
                 buyValid = false;
             }
@@ -36,10 +36,10 @@ public class LottoTicketTest {
             System.out.println("\n===== " + (i + 1) + "번째 게임 번호선택 방식 =====");
             boolean typeValid = true;
             while (typeValid) {
-                System.out.print("번호선택 방법을 정해주세요. (1:자동, 2:반자동, 3:수동) \n입력 : ");
+                System.out.print("[안내] 번호선택 방법을 정해주세요. (1:자동, 2:반자동, 3:수동) \n입력 : ");
                 gameType = (int) inputValue("int");
                 if(gameType < 1 || gameType > 3) {
-                    System.out.println("ERROR! (입력값 : " + gameType + ")\n안내 : 1, 2, 3 중에서 선택해주세요.");
+                    System.out.println("[ERROR!] (입력값 : " + gameType + ")\n[안내] 1, 2, 3 중에서 선택해주세요.");
                 } else {
                     switch (gameType) {
                         case 1:
@@ -49,6 +49,10 @@ public class LottoTicketTest {
                         case 2:
                             System.out.print("반자동 번호를 입력하세요. (예: 1,2,3) \n입력 : ");
                             String inputVal = (String) inputValue("string");
+                            inputVal = inputVal.replaceAll(" ", ""); // 공백 제거
+                            String[] strArr = inputVal.split(",");
+                            int[] testArr = stringToIntArray(strArr);
+                            System.out.println("입력된 번호: " + Arrays.toString(testArr));
                             result[i] = makeLotto(1); // 로직미구현 자동번호로 대체
                             break;
                         case 3:
@@ -58,7 +62,8 @@ public class LottoTicketTest {
                             break;
                     
                         default:
-                            break;
+                            System.out.println("ERROR! (입력값 : " + gameType + ")\n안내 : 1, 2, 3 중에서 선택해주세요.");
+                            return;
                     }
                     typeValid = false;
                 }
@@ -71,6 +76,7 @@ public class LottoTicketTest {
         }
 
     }
+
     /**
      * makeLotto : 로또 번호 생성 함수
      * @param gameType - 게임 타입 (1:자동, 2:반자동, 3:수동)
@@ -135,11 +141,7 @@ public class LottoTicketTest {
      */
     public static int[] chooseNumber(int gameType) {
         int[] data = new int[6];
-
-        if(gameType == 3) {
-
-        }
-        
+        // if(gameType == 3) {}
         // 오름차순 정렬
         data = arraySort(data, "asc");
         
@@ -152,18 +154,45 @@ public class LottoTicketTest {
      * @return (Object) 입력값
      */
     public static Object inputValue(String type) {
-        Scanner scan = new Scanner(System.in);
-
-        if(type == "string") {
-            String input = scan.nextLine();
-            return input;
-        } 
-        if(type == "int") {
-            int input = scan.nextInt();
-            return input;
+        Scanner inputScan = new Scanner(System.in);
+        if(type.equals("string")) {
+            try {
+                String input = inputScan.nextLine();
+                inputScan.close();
+                return input;
+            } catch (Exception e) {
+                inputScan.next(); // 잘못된 입력을 스킵
+                return null;
+            } finally {
+                inputScan.close();
+            }
+        } else if(type.equals("int")) {
+            try {
+                int input = inputScan.nextInt();
+                return input;
+            } catch (Exception e) {
+                inputScan.next(); // 잘못된 입력을 스킵
+                return -505;
+            } finally {
+                inputScan.close();
+            }
         }
 
+        inputScan.close();
         return null;
+    }
+    
+    /**
+     * stringToIntArray : 문자열을 정수 배열로 변환
+     * @param strArr
+     * @return
+     */
+    public static int[] stringToIntArray(String[] strArr) {
+        int[] intArr = new int[strArr.length];
+        for (int i = 0; i < intArr.length; i++) {
+             intArr[i] = Integer.parseInt(strArr[i]);
+        }
+        return intArr;
     }
 
     /**
@@ -222,3 +251,4 @@ public class LottoTicketTest {
         return sortData;
     }
 }
+
