@@ -49,7 +49,7 @@ public class Student {
     public void setName(String name) {
         // System.out.println(name + "\n" + this.name);
         // 초기화, 빈값, 길이 
-        if(name == null || name.isEmpty() || name.length() < 2) {
+        if(name.length() < 2) {
             return;
         }
         this.name = name;

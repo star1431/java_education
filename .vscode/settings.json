@@ -3,5 +3,22 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
-    ]
+    ],
 }
+
+// {
+//     "editor.mouseWheelZoom": true,
+//     "github.copilot.nextEditSuggestions.enabled": true,
+//     "editor.inlayHints.enabled": "off",
+//     "editor.stickyScroll.enabled": false,
+//     "java.debug.settings.vmArgs": "-Dfile.encoding=UTF-8 -Dconsole.encoding=UTF-8 -Dstdout.encoding=UTF-8",
+//     "java.debug.settings.console": "integratedTerminal",
+//     "java.compile.nullAnalysis.mode": "automatic",
+//     "terminal.integrated.defaultProfile.windows": "Command Prompt",
+//     "terminal.integrated.profiles.windows": {
+//         "Command Prompt": {
+//             "path": "C:\\Windows\\System32\\cmd.exe",
+//             "args": ["/k", "chcp 65001"]
+//         }
+//     }
+// }
