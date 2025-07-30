@@ -3,7 +3,7 @@ import java.lang.reflect.Method;
 import EDU0729.exam.*;
 /**
  * EDU0729 > EDU0729.java
- * example01 : 2차원배열
+ * example01 : Student.java 호출
  */
 public class EDU0729 {
     public static void main(String[] args) {
