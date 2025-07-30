@@ -3,6 +3,9 @@
 
 ### 임시타이틀
 
+- vscode 자바팩 : [https://code.visualstudio.com/docs/java/java-tutorial]
+- JDK  (java21) : [https://www.oracle.com/kr/java/technologies/downloads/#java21]
+
 #### 1. 데일리 요약
 - 2025.07.21 
     * S/W 정의 및 개념, 통합개발환경(IDE) 이해, IDE 처리 과정, 바이트 개념 등

@@ -37,7 +37,6 @@ public class OnlineShop {
         System.out.println("[안내] 사용자 정보 입력");
         System.out.print("성함 : ");
         String name = scan.nextLine();
-        System.out.println("입력된 이름: [" + name + "]");
         System.out.print("아이디 : ");
         String id = scan.nextLine();
         System.out.print("주소 : ");
